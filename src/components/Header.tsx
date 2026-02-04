@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 
-interface HeaderProps {}
+interface HeaderProps {
+  onCreateClick: () => void;
+}
 
-export default function Header({}: HeaderProps) {
+export default function Header({ onCreateClick }: HeaderProps) {
   return (
     <header className="header">
       {/* Banner */}

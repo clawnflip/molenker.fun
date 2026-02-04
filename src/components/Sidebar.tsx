@@ -1,4 +1,3 @@
-```typescript
 "use client";
 
 import Link from "next/link";
@@ -70,4 +69,3 @@ export default function Sidebar({ onCreateClick }: SidebarProps) {
     </aside>
   );
 }
-```

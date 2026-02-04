@@ -9,6 +9,7 @@ export default function Support() {
   const skillUrl = "https://molenker.fun/skill.md";
 
   const copyToClipboard = async () => {
+    if (typeof navigator === 'undefined') return;
     try {
       await navigator.clipboard.writeText(skillUrl);
       setCopied(true);
