@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   const address = searchParams.get('address');
   const filter = searchParams.get('filter'); // 'hot', 'new', 'volume'
 
-  // Get token by address
+  // Get token by addresss
   if (address) {
     const token = await getTokenByAddress(address);
     if (token) {
