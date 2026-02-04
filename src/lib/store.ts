@@ -211,80 +211,17 @@ export async function getTopVolumeTokens(limit: number = 10): Promise<TokenLaunc
 }
 
 // Seed mock data if empty (for demo/dev purposes)
-async function seedMockData() {
-  const tokens = await getAllTokens();
-  if (tokens.length > 0) return;
-
-  const mockTokens: TokenLaunch[] = [
-    {
-      id: '1',
-      name: 'LobsterKing',
-      symbol: 'LOBK',
-      description: 'The King of All Lobsters on Base',
-      image: 'https://iili.io/example1.jpg',
-      wallet: '0x742d35Cc6634C0532925a3b844Bc9e7595f2bD12',
-      tokenAddress: '0xa1F72459dfA10BAD200Ac160eCd78C6b77a747be',
-      txHash: '0x123...',
-      deployedAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
-      source: 'moltx',
-      sourceUrl: 'https://moltx.io/post/abc123',
-      agentName: 'LobsterBot',
-      marketCap: 2440000,
-      volume24h: 450000,
-      priceChange24h: 89.3,
-      holders: 1250,
-      status: 'deployed',
-    },
-    {
-      id: '2',
-      name: 'ClawCoin',
-      symbol: 'CLAW',
-      description: 'The ultimate lobster claw token on Base network',
-      image: 'https://iili.io/example2.jpg',
-      wallet: '0x189C1E468cA80Cfb98304ca5981D3710E00118E2',
-      tokenAddress: '0xb2F82459dfA10BAD200Ac160eCd78C6b77a747bf',
-      txHash: '0x456...',
-      deployedAt: new Date(Date.now() - 15 * 60 * 1000), // 15 mins ago
-      source: 'moltbook',
-      sourceUrl: 'https://moltbook.com/post/def456',
-      agentName: 'ClawMaster',
-      marketCap: 200000,
-      volume24h: 85000,
-      priceChange24h: 255.59,
-      holders: 320,
-      status: 'deployed',
-    },
-    {
-      id: '3',
-      name: 'ReefRunner',
-      symbol: 'REEF',
-      description: 'Navigate the crypto reefs with style',
-      image: 'https://iili.io/example3.jpg',
-      wallet: '0x333d35Cc6634C0532925a3b844Bc9e7595f2bD33',
-      tokenAddress: '0xc3F82459dfA10BAD200Ac160eCd78C6b77a747c0',
-      txHash: '0x789...',
-      deployedAt: new Date(Date.now() - 5 * 60 * 1000), // 5 mins ago
-      source: '4claw',
-      sourceUrl: 'https://4claw.org/t/ghi789',
-      agentName: 'ReefAgent',
-      marketCap: 50000,
-      volume24h: 12000,
-      priceChange24h: 45.2,
-      holders: 89,
-      status: 'deployed',
-    },
-  ];
-
-  for (const token of mockTokens) {
-    await addToken(token);
-  }
-  
-  if (!IS_KV_CONFIGURED) {
-    console.log('Seeded in-memory store with mock data');
-  } else {
-    console.log('Seeded Vercel KV with mock data');
-  }
-}
+// async function seedMockData() {
+//   // Disabled for production cleanliness - agents will populate this
+//   const tokens = await getAllTokens();
+//   if (tokens.length > 0) return;
+//   
+//   if (!IS_KV_CONFIGURED) {
+//     console.log('In-memory store initialized (empty)');
+//   } else {
+//     console.log('Vercel KV connected');
+//   }
+// }
 
 // Trigger seed
-seedMockData().catch(console.error);
+// seedMockData().catch(console.error);
