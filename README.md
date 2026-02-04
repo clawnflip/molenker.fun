@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# molenker.fun 🦞
+
+The #1 token launchpad on Base. Deploy your token in seconds and earn 90% of
+trading fees.
+
+## Features
+
+- 🦞 **Easy Token Creation** - Launch your token in seconds
+- 💰 **90% Fee Share** - You keep 90% of all trading fees
+- 🔥 **Trending Tokens** - Discover hot tokens on Base
+- ⚡ **Built on Clanker** - Powered by audited smart contracts
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 + TypeScript + Tailwind CSS
+- **Blockchain**: Base Network (L2)
+- **Token Deploy**: Clanker SDK v4
+- **Wallet**: RainbowKit + wagmi
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is configured for Vercel deployment:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-## Learn More
+# Deploy
+vercel
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Fee Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Recipient        | Share          |
+| ---------------- | -------------- |
+| Token Creator    | 90%            |
+| molenker.fun     | 10%            |
+| Clanker Protocol | 20% (separate) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment Variables
 
-## Deploy on Vercel
+Create a `.env.local` file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+NEXT_PUBLIC_PLATFORM_WALLET=0xYOUR_PLATFORM_WALLET_ADDRESS
+NEXT_PUBLIC_PLATFORM_ADMIN=0xYOUR_ADMIN_WALLET_ADDRESS
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
+
+---
+
+Made with 🦞 by molenker.fun team
