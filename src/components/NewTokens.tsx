@@ -63,8 +63,11 @@ export default function NewTokens({ tokens: initialTokens }: NewTokensProps) {
       
       <div className="new-tokens-grid">
         {tokens.map((token, index) => (
-          <div 
+          <a 
             key={token.id} 
+            href={`https://clanker.world/clanker/${token.tokenAddress || ''}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`new-token-card ${newTokenFlash === token.id ? 'flash' : ''}`}
             style={{ animationDelay: `${index * 100}ms` }}
           >
@@ -97,10 +100,22 @@ export default function NewTokens({ tokens: initialTokens }: NewTokensProps) {
               )}
             </div>
             
-            <div className="new-token-source">
-              via {token.source}
+            <div className="new-token-footer">
+              <div className="new-token-caCode" onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (token.tokenAddress) {
+                   navigator.clipboard.writeText(token.tokenAddress);
+                   // Simple visual feedback could be added here
+                }
+              }} title="Copy Contract Address">
+                 CA: {token.tokenAddress ? `${token.tokenAddress.slice(0,6)}...${token.tokenAddress.slice(-4)}` : 'N/A'} 📋
+              </div>
+              <div className="new-token-source">
+                via {token.source}
+              </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

@@ -25,7 +25,8 @@
 html, body {
   background: var(--bg-dark);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
   font-size: 14px;
   line-height: 1.5;
@@ -80,7 +81,11 @@ html, body {
 .sidebar-logo-text {
   font-size: 18px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--lobster-red) 0%, var(--lobster-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red) 0%,
+    var(--lobster-accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,7 +131,11 @@ html, body {
    ================================ */
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--lobster-red) 0%, var(--lobster-red-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red) 0%,
+    var(--lobster-red-dark) 100%
+  );
   color: white;
   border: none;
   padding: 10px 16px;
@@ -286,7 +295,7 @@ html, body {
   position: absolute;
   bottom: 6px;
   left: 6px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 11px;
@@ -408,7 +417,11 @@ html, body {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--lobster-red) 0%, var(--lobster-red-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red) 0%,
+    var(--lobster-red-dark) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -485,7 +498,11 @@ html, body {
 
 .token-card-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--lobster-red) 0%, var(--lobster-accent) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--lobster-red) 0%,
+    var(--lobster-accent) 100%
+  );
   border-radius: 2px;
 }
 
@@ -561,7 +578,11 @@ html, body {
 }
 
 .modal-banner {
-  background: linear-gradient(135deg, var(--lobster-red-dark) 0%, rgba(220, 38, 38, 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red-dark) 0%,
+    rgba(220, 38, 38, 0.3) 100%
+  );
   border: 1px solid var(--lobster-red);
   border-radius: 12px;
   padding: 14px;
@@ -784,26 +805,26 @@ html, body {
   .sidebar {
     display: none;
   }
-  
+
   .main-content {
     margin-left: 0;
     padding: 12px 16px;
   }
-  
+
   .token-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .header {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .header-actions {
     width: 100%;
     justify-content: space-between;
   }
-  
+
   .search-input {
     flex: 1;
   }
@@ -818,8 +839,12 @@ html, body {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-float {
@@ -827,8 +852,12 @@ html, body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ================================
@@ -836,7 +865,11 @@ html, body {
    ================================ */
 
 .new-tokens-container {
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
   border: 1px solid var(--lobster-red);
   border-radius: 16px;
   padding: 20px;
@@ -846,19 +879,28 @@ html, body {
 }
 
 .new-tokens-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--lobster-red), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lobster-red),
+    transparent
+  );
   animation: scan 2s linear infinite;
 }
 
 @keyframes scan {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .new-tokens-header {
@@ -877,8 +919,12 @@ html, body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .fire-animation {
@@ -886,8 +932,12 @@ html, body {
 }
 
 @keyframes fire {
-  0% { transform: scale(1) rotate(-5deg); }
-  100% { transform: scale(1.1) rotate(5deg); }
+  0% {
+    transform: scale(1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(5deg);
+  }
 }
 
 .new-tokens-grid {
@@ -912,11 +962,11 @@ html, body {
 }
 
 @keyframes flashIn {
-  0% { 
+  0% {
     background: var(--lobster-red);
     transform: scale(1.05);
   }
-  100% { 
+  100% {
     background: var(--bg-card);
     transform: scale(1);
   }
@@ -945,7 +995,11 @@ html, body {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--lobster-red) 0%, var(--lobster-red-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red) 0%,
+    var(--lobster-red-dark) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1082,7 +1136,11 @@ html, body {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--lobster-red) 0%, var(--lobster-red-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--lobster-red) 0%,
+    var(--lobster-red-dark) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1221,7 +1279,11 @@ html, body {
 }
 
 .skill-card {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(220, 38, 38, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    rgba(220, 38, 38, 0.05) 100%
+  );
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 24px;
@@ -1321,7 +1383,7 @@ html, body {
 }
 
 .skill-example {
-  font-family: 'Monaco', 'Menlo', monospace;
+  font-family: "Monaco", "Menlo", monospace;
   font-size: 11px;
   color: var(--lobster-accent);
   white-space: pre;
@@ -1335,15 +1397,15 @@ html, body {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .skill-icon {
     order: -1;
   }
-  
+
   .skill-visual {
     display: none;
   }
-  
+
   .skill-platforms {
     justify-content: center;
   }
@@ -1373,9 +1435,48 @@ html, body {
   .content-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .content-sidebar {
     display: none;
   }
 }
 
+/* ================================
+   TOKEN FOOTER & ACTIONS
+   ================================ */
+
+.new-token-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.new-token-caCode {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.new-token-caCode:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.new-token-source {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: right;
+  margin-top: 0; /* Reset previous margin */
+  border: none; /* Reset previous border */
+  padding: 0;
+}

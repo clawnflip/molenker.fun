@@ -39,8 +39,11 @@ export default function HotTokens() {
 
       <div className="hot-tokens-grid">
         {tokens.map((token, index) => (
-          <div 
+          <a 
             key={token.id} 
+            href={`https://clanker.world/clanker/${token.tokenAddress || ''}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hot-token-card"
             style={{ animationDelay: `${index * 50}ms` }}
           >
@@ -66,7 +69,7 @@ export default function HotTokens() {
             <div className="hot-token-mc">
               {formatMC(token.marketCap)}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

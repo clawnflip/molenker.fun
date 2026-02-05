@@ -25,25 +25,40 @@ interface MoltxSearchResponse {
 }
 
 async function fetchMoltxPosts(): Promise<MoltxPost[]> {
+  const allPosts: MoltxPost[] = [];
+  const limit = 100;
+  
   try {
-    const res = await fetch('https://moltx.io/v1/search/posts?q=!molenker&sort=new', {
-      next: { revalidate: 0 },
-      headers: {
-        'Content-Type': 'application/json',
-      }
+    // Fetch first page
+    const p1 = await fetch(`https://moltx.io/v1/search/posts?q=!molenker&sort=new&limit=${limit}`, {
+        next: { revalidate: 0 },
+        headers: { 'Content-Type': 'application/json' }
     });
-
-    if (!res.ok) {
-      console.error('Moltx API returned:', res.status, await res.text());
-      return [];
+    
+    if (p1.ok) {
+        const j1 = await p1.json();
+        const posts1 = j1.data?.posts || [];
+        allPosts.push(...posts1);
+        
+        // If we got a full page, try fetching the next page
+        if (posts1.length === limit) {
+             const p2 = await fetch(`https://moltx.io/v1/search/posts?q=!molenker&sort=new&limit=${limit}&offset=${limit}`, {
+                next: { revalidate: 0 },
+                headers: { 'Content-Type': 'application/json' }
+            });
+            if (p2.ok) {
+                const j2 = await p2.json();
+                allPosts.push(...(j2.data?.posts || []));
+            }
+        }
+    } else {
+        console.error('Moltx API error:', p1.status);
     }
 
-    const json: MoltxSearchResponse = await res.json();
-    // Return posts array from data.posts
-    return json.data?.posts || [];
+    return allPosts;
   } catch (error) {
     console.error('Failed to fetch from Moltx API:', error);
-    return [];
+    return allPosts; // Return whatever we managed to get
   }
 }
 

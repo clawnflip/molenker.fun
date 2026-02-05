@@ -31,7 +31,13 @@ export default function VolumeTokens() {
 
       <div className="volume-tokens-list">
         {tokens.map((token, index) => (
-          <div key={token.id} className="volume-token-row">
+          <a 
+            key={token.id} 
+            href={`https://clanker.world/clanker/${token.tokenAddress || ''}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="volume-token-row"
+          >
             <span className="volume-rank">#{index + 1}</span>
             <div className="volume-token-icon">
               {token.image ? (
@@ -47,7 +53,7 @@ export default function VolumeTokens() {
             <div className="volume-amount">
               {formatVolume(token.volume24h)}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

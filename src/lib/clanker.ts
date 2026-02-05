@@ -88,7 +88,7 @@ export async function deployClankerToken(params: DeployParams): Promise<DeployRe
       rewards: {
         recipients: [
           {
-            admin: PLATFORM_WALLET as `0x${string}`,
+            admin: params.ownerAddress as `0x${string}`, // User controls their own share
             recipient: params.ownerAddress as `0x${string}`,
             bps: 9000, // 90%
             token: 'Both' as const,
